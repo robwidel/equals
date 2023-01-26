@@ -5,16 +5,29 @@ public class Ball implements Cloneable{
         this.size = size;
         this.name = name;
     }
-
+    @Override
     protected Object clone() throws CloneNotSupportedException{
         return super.clone();
     }
 
-    public boolean equals(Ball ball2) {
+    @Override
+    public boolean equals(Object o) {
 
-        if(this.size == ball2.size && this.name == ball2.name && this == ball2){
+        if(this==o){
             return true;
         }
-        else return false;
+
+        if(o==null){
+            return false;
+        }
+
+        if(o.getClass() == getClass()){
+            Ball object = (Ball) o;
+            return object.size == this.size && this.name.equals(object.name);
+        }
+        else {
+            return false;
+        }
+
     }
 }
