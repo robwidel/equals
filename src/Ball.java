@@ -30,4 +30,12 @@ public class Ball implements Cloneable{
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Ball{" +
+                "size=" + size +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
